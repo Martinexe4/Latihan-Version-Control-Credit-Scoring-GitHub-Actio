@@ -37,8 +37,8 @@ jobs:
 
       - name: Push mlruns to repo using secrets
         run: |
-          git config --global user.name "${{ secrets.USERNAME }}"
-          git config --global user.email "${{ secrets.EMAIL }}"
+          git config --global user.name ${{ secrets.USERNAME }}
+          git config --global user.email ${{ secrets.EMAIL }}
 
           # Ubah URL origin agar bisa push dengan GH_TOKEN
           git remote set-url origin https://x-access-token:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
